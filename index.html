@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,20 +15,32 @@
     <title>Pocket App</title>
   </head>
   <body>
-    <nav>
-      <a class="nav-link" href="">app</a>
-      <a class="nav-link" href="">blog</a>
-      <a class="nav-link" href="">shop</a>
-      <a class="nav-link" href="">note</a>
-      <a class="nav-link" href="">game</a>
-    </nav>
-    <section class="page-container">
-      <button class="link-button"><</button>
-      <div>
-        <h1>tiny app</h1>
-        <p>coming soon</p>
-      </div>
-      <button class="link-button">></button>
-    </section>
+    <div class="container">
+      <header>
+        <nav>
+          <a class="nav-link" href="">app</a>
+          <a class="nav-link" href="">blog</a>
+          <a class="nav-link" href="">shop</a>
+          <a class="nav-link" href="">note</a>
+          <a class="nav-link" href="">game</a>
+        </nav>
+      </header>
+      <aside class='left'>
+          <button id='left-button' class="link-button"><</button>
+      </aside>
+      <main>
+        <section class="page-container">
+          <div>
+            <span class='pocket-text'>pocket <span id='app-name' class='app-name'></span></span>
+            <p>coming soon</p>
+          </div>
+        </section>
+      </main>
+      <aside class='right'>
+          <button id='right-button' class="link-button">></button>
+      </aside>
+      <footer></footer>
+
+    </div>
   </body>
 </html>

@@ -1,3 +1,7 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     max-width: 1200px;
     margin: 50px auto;
@@ -21,17 +25,21 @@ nav {
 
 .nav-link {
     text-decoration: none;
+    color: inherit;
 }
 
 .link-button {
     border: none;
     cursor: pointer;
+    background-color: inherit;
+    color: inherit;
 }
 
-h1 {
+.pocket-text {
     font-size: 50px;
 }
 
-p {
-    text-align: center;
+.app-name {
+    /* text-align: center; */
+    color: teal;
 }
