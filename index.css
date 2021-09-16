@@ -1,0 +1,37 @@
+body {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-container {
+    margin: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.link-button {
+    border: none;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    text-align: center;
+}
