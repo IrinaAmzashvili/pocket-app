@@ -1,6 +1,16 @@
+/*
+Additions:
+- snek can't go in opposite direction of where it's currently going
+- score
+- high score
+- message displayed before game starts
+- message displayed when snek runs into its tail
+*/
+
+
 // initial state for the game
 // they are equal to each other, any change to one happens to the other
-px = py = 10; // head - used to reference every segmetn
+px = py = 10; // head - used to reference every segment
 gs = ts = 20; // game boundaries -> size of playable area - number of pixels in each square
 ax = ay = 15; // apple
 
@@ -17,15 +27,17 @@ const game = () => {
   gameScore.innerHTML = `${segments - 5}`
   let highScore = document.getElementById('high-score')
 
-  // console.log(highScore.innerHTML, typeof highScore.innerHTML)
   if (+gameScore.innerHTML > +highScore.innerHTML) {
     highScore.innerHTML = `${gameScore.innerHTML}`
   }
+
   px += xv;
   py += yv;
 
+  // game background
   context.fillStyle = '#0c1a29';
   context.fillRect(0, 0, canvas.width, canvas.height);
+  // snek color
   context.fillStyle = '#49c86f';
 
   // reset if snek comes off edge of board
@@ -36,9 +48,16 @@ const game = () => {
 
   for (let i = 0; i < body.length; i++) {
     context.fillRect(body[i].x * gs, body[i].y * gs, gs - 2, gs - 2);
-    // if head intersepts any segments of the body, reset segments to 5
+    // if head intersepts any segment of the body, reset segments to 5
     if (body[i].x === px && body[i].y === py) {
       segments = 5;
+      if (px !== 10 && py !== 10) {
+        const failedMessage = document.getElementById('failed-message');
+        failedMessage.removeAttribute('hidden')
+        setTimeout(() => {
+          failedMessage.setAttribute('hidden', 'true')
+        }, 2000)
+      }
     }
   };
 
@@ -60,6 +79,7 @@ const game = () => {
     ay = Math.floor(Math.random() * ts);
   };
 
+  // apple
   context.fillStyle = '#ff5353';
   context.fillRect(ax * gs, ay * gs, gs - 2, gs - 2);
 };

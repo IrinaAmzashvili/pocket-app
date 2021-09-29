@@ -27,10 +27,14 @@ canvas {
     position: relative;
 }
 
-#instructions {
+#instructions, #failed-message {
     position: absolute;
     color: white;
     top: 140px;
     left: 104px;
     margin: 0;
+}
+
+#failed-message {
+    left: 150px;
 }
