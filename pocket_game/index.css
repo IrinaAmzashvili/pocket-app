@@ -1,16 +1,3 @@
-html, body {
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-h1 {
-    font-family: 'Audiowide', cursive;
-}
 canvas {
     border: 10px solid #0d5a63;
 }

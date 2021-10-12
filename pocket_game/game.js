@@ -10,11 +10,21 @@ Additions:
 const generateGame = () => {
   canvas = document.createElement("canvas");
   canvas.id = "game";
-  canvas.width = '500';
-  canvas.height = '500';
+  canvas.width = '400';
+  canvas.height = '400';
 
   const display = document.getElementById('display');
   display.append(canvas);
+
+  context = canvas.getContext("2d");
+  context.fillStyle = 'white';
+  context.fillText('hey there', 20, 20)
+
+  const instructions = document.createElement("p");
+  instructions.id = 'instructions';
+  instructions.innerHTML = 'press any arrow key to begin';
+  canvas.append(instructions);
+
   // initial state for the game
   // they are equal to each other, any change to one happens to the other
   px = py = 10; // head - used to reference every segment
@@ -29,13 +39,13 @@ const generateGame = () => {
 
   // logic for game
   const game = () => {
-    let gameScore = document.getElementById("game-score");
-    gameScore.innerHTML = `${segments - 5}`;
-    let highScore = document.getElementById("high-score");
+    // let gameScore = document.getElementById("game-score");
+    // gameScore.innerHTML = `${segments - 5}`;
+    // let highScore = document.getElementById("high-score");
 
-    if (+gameScore.innerHTML > +highScore.innerHTML) {
-      highScore.innerHTML = `${gameScore.innerHTML}`;
-    }
+    // if (+gameScore.innerHTML > +highScore.innerHTML) {
+    //   highScore.innerHTML = `${gameScore.innerHTML}`;
+    // }
 
     px += xv;
     py += yv;
@@ -92,7 +102,6 @@ const generateGame = () => {
 
   // control our D-Pad
   const keyDown = (e) => {
-    const instructions = document.getElementById("instructions");
     switch (e.keyCode) {
       case 65:
       case 37:
@@ -127,7 +136,6 @@ const generateGame = () => {
     }
   };
 
-  context = canvas.getContext("2d");
   document.addEventListener("keydown", keyDown);
   setInterval(game, 100);
 };

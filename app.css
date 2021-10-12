@@ -39,6 +39,12 @@ nav {
     font-weight: 100;
 }
 
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .pocket-text {
     font-size: 80px;
     font-family: 'Audiowide', cursive;
