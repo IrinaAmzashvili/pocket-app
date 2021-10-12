@@ -46,7 +46,9 @@ nav {
 }
 
 .app-name {
-    color: teal;
+    font-family: 'Audiowide', cursive;
+    font-weight: 100;
+    color: #4dd0e1;
 }
 
 .subtext {

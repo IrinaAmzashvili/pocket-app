@@ -1,7 +1,12 @@
+const makeArt = () => {
+  // const pocketArt = document.getElementById('pocket-art');
+  const pocketArt = document.createElement('canvas');
+  pocketArt.id = 'pocket-art';
+  pocketArt.height = '500';
+  pocketArt.width = '500';
+  pocketArt.style.border = '2px solid black'
+  pocketArt.style.background = 'white';
 
-let makeArt = () => {
-  // this is available on canvas (can also do 3d):
-  const pocketArt = document.getElementById('pocketart');
   const context = pocketArt.getContext('2d');
 
   for (let x = 0; x < 255; x++) {
@@ -18,6 +23,7 @@ let makeArt = () => {
       }
     }
   }
-}
 
-document.addEventListener('DOMContentLoaded', makeArt);
+  const display = document.getElementById('display');
+  display.append(pocketArt);
+}

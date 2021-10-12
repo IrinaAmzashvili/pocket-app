@@ -1,0 +1,4 @@
+- different color and font for every page
+- use arrow keys to traverse through pages
+- update tiny game
+- 
