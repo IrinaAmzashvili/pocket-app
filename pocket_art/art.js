@@ -1,4 +1,4 @@
-const makeArt = () => {
+const generateArt = () => {
   // const pocketArt = document.getElementById('pocket-art');
   const pocketArt = document.createElement('canvas');
   pocketArt.id = 'pocket-art';

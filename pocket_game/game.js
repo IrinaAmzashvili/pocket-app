@@ -7,7 +7,7 @@ Additions:
 - message displayed when snek runs into its tail
 */
 
-const initGame = () => {
+const generateGame = () => {
   canvas = document.createElement("canvas");
   canvas.id = "game";
   canvas.width = '500';
