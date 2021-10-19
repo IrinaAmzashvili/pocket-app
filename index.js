@@ -8,6 +8,7 @@ const cleanUp = () => {
   document.body.style.backgroundColor = '#FFFFFF';
   document.body.style.color = '#000000';
   display.innerHTML = "";
+  options.innerHTML = '';
 
   const clickable = document.querySelectorAll('.clickable-dark')
   clickable.forEach(el => {
@@ -16,9 +17,12 @@ const cleanUp = () => {
   });
 };
 
-const render = () => {
+const render = (appName) => {
   cleanUp();
-  switch (appList[0].name) {
+  switch (appName) {
+    case "notes":
+      generateNotes();
+      break;
     case "game":
       generateGame();
       break;
@@ -35,7 +39,7 @@ const setDisplay = () => {
   let selectedApp = appList[0];
   appName.innerHTML = selectedApp.name;
   appName.style.color = selectedApp.color;
-  render();
+  render(selectedApp.name);
 };
 
 const rotateRight = () => {
