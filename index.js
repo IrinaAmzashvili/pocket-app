@@ -20,6 +20,9 @@ const cleanUp = () => {
 const render = (appName) => {
   cleanUp();
   switch (appName) {
+    case "math":
+      generateMath();
+      break;
     case "notes":
       generateNotes();
       break;
@@ -69,3 +72,8 @@ const rotateLeft = () => {
 // document.addEventListener("keyDown", keyDown);
 document.getElementById("right-button").onclick = rotateRight;
 document.getElementById("left-button").onclick = rotateLeft;
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  generateMath();
+});

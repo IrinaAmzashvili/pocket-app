@@ -3,9 +3,9 @@ let apps = {
     name: 'app',
     color: '#2ed0eb',
   },
-  blog: {
-    name: 'blog',
-    color: '#4dd0e1',
+  math: {
+    name: 'math',
+    color: '#e61977',
   },
   shop: {
     name: 'shop',
