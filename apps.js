@@ -21,7 +21,7 @@ let apps = {
   },
   art: {
     name: 'art',
-    color: '#2ed0eb',
+    color: '#4796a5',
   },
   grave: {
     name: 'grave',

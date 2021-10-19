@@ -31,6 +31,8 @@ const generateMath = () => {
   // handle num inputs
   const handleNumInput = numInput => {
     if (numInput === '.') return;
+    if (numInput === 'ENTER') return;
+
     if (numInput === 'c') {
       state = {...defaultState};
       return lcd.innerHTML = 0;
@@ -67,7 +69,14 @@ const generateMath = () => {
 
   // if operation is selected, calculate()
   // else set total to current input
-  const handleOpInput = opInput => {
+  const handleOpInput = (e, opInput) => {
+    const opButtons = document.querySelectorAll('.op-button');
+    console.log(opButtons)
+    opButtons.forEach(button => {
+      button.classList.remove('active-op');
+    })
+    e.target.classList.add('active-op');
+
     if (state.currentOp) {
       calculate();
     } else {
@@ -96,7 +105,8 @@ const generateMath = () => {
   ops.forEach(op => {
     const button = document.createElement('button');
     button.innerHTML = op;
-    button.onclick = () => handleOpInput(op);
+    button.classList = 'op-button';
+    button.onclick = (e) => handleOpInput(e, op);
     opButtonsDiv.append(button);
   });
 

@@ -4,7 +4,7 @@ const generateArt = () => {
   pocketArt.id = 'pocket-art';
   pocketArt.height = '500';
   pocketArt.width = '500';
-  pocketArt.style.border = '2px solid black'
+  pocketArt.style.border = `5px solid ${appList[0].color}`
   pocketArt.style.background = 'white';
 
   const context = pocketArt.getContext('2d');
