@@ -26,6 +26,18 @@
     border: none;
     background-color: inherit;
     width: 25%;
-    /* height: 20%; */
     margin: 17px;
+    cursor: pointer;
+}
+
+.operations-div {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+.operations-div button {
+    border: none;
+    background-color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
 }

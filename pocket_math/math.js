@@ -50,7 +50,7 @@ const generateMath = () => {
       case 'sub':
         state.total -= currnetValue;
         break;
-      case 'mul':
+      case 'mult':
         state.total *= currnetValue;
         break;
       case 'div':
@@ -68,7 +68,6 @@ const generateMath = () => {
   // if operation is selected, calculate()
   // else set total to current input
   const handleOpInput = opInput => {
-    console.log('hi')
     if (state.currentOp) {
       calculate();
     } else {
@@ -92,11 +91,12 @@ const generateMath = () => {
 
   // draw ops buttons
   const opButtonsDiv = document.createElement('div');
+  opButtonsDiv.classList = 'operations-div';
+
   ops.forEach(op => {
     const button = document.createElement('button');
     button.innerHTML = op;
-    // button.onClick = () => console.log(op);
-    button.onClick = () => handleOpInput(op);
+    button.onclick = () => handleOpInput(op);
     opButtonsDiv.append(button);
   });
 
