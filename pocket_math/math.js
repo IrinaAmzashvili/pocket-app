@@ -47,16 +47,16 @@ const generateMath = () => {
     let currnetValue = parseFloat(state.currentInput);
     switch (state.currentOp) {
       case 'add':
-        state.total += currnetValue;
+        state.total += currnetValue || 0;
         break;
       case 'sub':
-        state.total -= currnetValue;
+        state.total -= currnetValue || 0;
         break;
       case 'mult':
-        state.total *= currnetValue;
+        state.total *= currnetValue || 1;
         break;
       case 'div':
-        state.total /= currnetValue;
+        state.total /= currnetValue || 1;
         break;
       default:
         state.total = 0;
@@ -71,7 +71,6 @@ const generateMath = () => {
   // else set total to current input
   const handleOpInput = (e, opInput) => {
     const opButtons = document.querySelectorAll('.op-button');
-    console.log(opButtons)
     opButtons.forEach(button => {
       button.classList.remove('active-op');
     })
@@ -84,7 +83,6 @@ const generateMath = () => {
       state.currentInput = '';
     }
     state.currentOp = opInput;
-    console.log(state)
     // edge case when subtracting
   }
 

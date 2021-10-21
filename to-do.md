@@ -20,3 +20,6 @@
 - ignore decimals for now
 - clear
 - clicking enter multiple times shouldn't do anything?
+
+## Store
+- 
