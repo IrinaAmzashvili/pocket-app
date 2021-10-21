@@ -1,0 +1,21 @@
+#shop-display {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item-div {
+    width: 30%;
+}
+
+#cart-Button {
+    margin: 30px auto;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}

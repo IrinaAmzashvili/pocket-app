@@ -9,7 +9,7 @@ let apps = {
   },
   shop: {
     name: 'shop',
-    color: '#2ed0eb',
+    color: '#f1c50e',
   },
   notes: {
     name: 'notes',

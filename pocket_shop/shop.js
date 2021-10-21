@@ -1,6 +1,5 @@
 /*
-Requirements
-
+Requirements:
 - Layout: same as all other apps
 - do not ammend index.html body
 - Write all code in this file
@@ -26,6 +25,70 @@ Stack:
 - HTML, CSS, JS => test using local storage
 - in production => DB (document based, NoSQL), backend - serves us the items (serverless), image storage (AWS S3)
 
-Research:
--
+To-Do:
+- Research
+- Formulate a plan
+  - database: MongoDB
+  - backend
+- Implement
 */
+
+
+const shopItems = [{ image: 'img.png', name: 'Item 1', price: 5.00 },
+              { image: 'img.png', name: 'Item 2', price: 1.50 },
+              { image: 'img.png', name: 'Item 3', price: 3.00 },
+              { image: 'img.png', name: 'Item 4', price: 2.50 },
+              { image: 'img.png', name: 'Item 5', price: 3.00 },
+              { image: 'img.png', name: 'Item 6', price: 4.00 },
+];
+
+const generateShop = () => {
+  // State variables
+  let total = 0.00;
+
+  // create shop
+  const shopDisplay = document.createElement('div');
+  shopDisplay.id = 'shop-display';
+  shopDisplay.style.border = `5px solid ${appList[0].color}`;
+
+  // Cart button
+  const cartButton = document.createElement('button');
+  cartButton.id = 'cart-Button';
+  cartButton.style.backgroundColor = appList[0].color;
+
+  const addToCart = (price) => {
+    total += price;
+    cartButton.innerHTML = `Cart: $${total}`;
+  }
+
+  const displayItems = () => {
+    cartButton.innerHTML = `Cart: $${total}`
+
+    shopItems.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.classList = 'item-div'
+      const img = document.createElement('img');
+      img.src = item.image;
+      itemDiv.append(img);
+
+      const nameP = document.createElement('p');
+      nameP.innerHTML = item.name;
+      itemDiv.append(nameP);
+
+      const priceP = document.createElement('p');
+      priceP.innerHTML = `$${item.price}`;
+      itemDiv.append(priceP);
+
+      const buyButton = document.createElement('button');
+      buyButton.innerHTML = 'Buy';
+      buyButton.onclick = () => addToCart(item.price);
+      itemDiv.append(buyButton);
+
+      shopDisplay.append(itemDiv);
+    });
+  };
+  displayItems();
+
+  display.append(shopDisplay);
+  options.append(cartButton);
+}

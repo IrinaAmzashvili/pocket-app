@@ -23,6 +23,9 @@ const render = (appName) => {
     case "math":
       generateMath();
       break;
+    case "shop":
+      generateShop();
+      break;
     case "notes":
       generateNotes();
       break;
@@ -74,6 +77,6 @@ document.getElementById("right-button").onclick = rotateRight;
 document.getElementById("left-button").onclick = rotateLeft;
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  generateMath();
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   generateMath();
+// });
