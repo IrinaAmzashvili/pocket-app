@@ -11,6 +11,10 @@ body {
     flex-direction: column;
 }
 
+button {
+    cursor: pointer;
+}
+
 nav {
     margin: 40px 0;
     display: flex;

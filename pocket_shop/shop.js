@@ -42,9 +42,13 @@ const shopItems = [{ image: 'img.png', name: 'Item 1', price: 5.00 },
               { image: 'img.png', name: 'Item 6', price: 4.00 },
 ];
 
+const inCart = [];
+
 const generateShop = () => {
   // State variables
   let total = 0.00;
+
+  const localStorage = window.localStorage;
 
   // create shop
   const shopDisplay = document.createElement('div');
@@ -55,14 +59,18 @@ const generateShop = () => {
   const cartButton = document.createElement('button');
   cartButton.id = 'cart-Button';
   cartButton.style.backgroundColor = appList[0].color;
+  cartButton.onclick = () => toggleDisplay();
 
-  const addToCart = (price) => {
-    total += price;
+  const addToCart = (item) => {
+    total += item.price;
     cartButton.innerHTML = `Cart: $${total}`;
-  }
+
+    inCart.push(item);
+    localStorage.setItem('items', JSON.stringify(inCart));
+  };
 
   const displayItems = () => {
-    cartButton.innerHTML = `Cart: $${total}`
+    cartButton.innerHTML = `Cart: $${total}`;
 
     shopItems.forEach(item => {
       const itemDiv = document.createElement('div');
@@ -81,13 +89,28 @@ const generateShop = () => {
 
       const buyButton = document.createElement('button');
       buyButton.innerHTML = 'Buy';
-      buyButton.onclick = () => addToCart(item.price);
+      buyButton.onclick = () => addToCart(item);
       itemDiv.append(buyButton);
 
       shopDisplay.append(itemDiv);
     });
   };
+
   displayItems();
+
+  const displayCart = () => {
+    cartButton.innerHTML = 'Back to shop';
+
+    shopDisplay.innerHTML = '';
+  };
+
+  const toggleDisplay = () => {
+    if (cartButton.innerHTML.includes('Cart: $')) {
+      displayCart();
+    } else {
+      displayItems();
+    }
+  };
 
   display.append(shopDisplay);
   options.append(cartButton);
